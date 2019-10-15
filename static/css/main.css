@@ -11,3 +11,14 @@ body {
     --main-text-color: #ffffff;
     --main-text-color-alt: #eeff00;
 }
+
+.center {
+    text-align: center;
+}
+
+.error {
+    color:var(--main-color);
+    margin-top:15%;
+    font-size:80px;
+    margin-bottom:15px;
+}

@@ -27,9 +27,6 @@ def error400(error):
 @app.errorhandler(401)
 def error401(error):
 	return rend('error.html', error_type=401, error=error)
-@app.errorhandler(402)
-def error402(error):
-	return rend('error.html', error_type=402, error=error)
 @app.errorhandler(403)
 def error403(error):
 	return rend('error.html', error_type=403, error=error)
@@ -39,9 +36,6 @@ def error404(error):
 @app.errorhandler(500)
 def error500(error):
 	return rend('error.html', error_type=500, error=error)
-@app.errorhandler(501)
-def error501(error):
-	return rend('error.html', error_type=501, error=error)
 @app.errorhandler(502)
 def error502(error):
 	return rend('error.html', error_type=502, error=error)
