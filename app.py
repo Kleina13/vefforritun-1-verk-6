@@ -4,6 +4,7 @@ from os import urandom
 from flask import Flask, render_template as rend, session, request, url_for
 from requests import get
 
+token = ''
 app = Flask(__name__)
 app.secret_key = urandom(13)
 
@@ -33,7 +34,7 @@ def company(name):
 
 @app.route('/station/<int:id>')
 def gas_station(id):
-	with get('AIzaSyBfdyGWkuYa49GV3cBpNUrmu-LTkfeZKfA') as map:
+	with get(token) as map:
 		pass
 	return rend('layout.html')
 
