@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1 class="center">{% block title %}Petrol Stations{% endblock %}</h1>
+    <nav>
+        {% for station in stations %}
+            <div>
+                <a href="/company/{{ station }}" >{{ station }}</a>
+            </div>
+        {% endfor %}
+    </nav>
+{% endblock %}

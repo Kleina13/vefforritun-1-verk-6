@@ -2,23 +2,41 @@
 
 from os import urandom
 from flask import Flask, render_template as rend, session, request, url_for
-from requests import *
+from requests import get
 
 app = Flask(__name__)
 app.secret_key = urandom(13)
 
 with get('https://apis.is/petrol') as response:
 	if response:
-		print('API Succesfully loaded')
+		print(' * API Succesfully loaded', response)
 		data = response.json()['results']
 	else:
-		print('API error')
+		print(' * API error', response)
 		exit()
 
+stations = []
+for station in data:
+    if station['company'] not in stations:
+        stations.append(station['company'])
+
+
+# lat, lon = data[INT]['geo']['lat'], data[INT]['geo']['lon']
 
 @app.route('/')
 def index():
+	return rend('index.html', stations=stations, data=data)
+
+@app.route('/company/<name>')
+def company(name):
 	return rend('layout.html')
+
+@app.route('/station/<int:id>')
+def gas_station(id):
+	with get('AIzaSyBfdyGWkuYa49GV3cBpNUrmu-LTkfeZKfA') as map:
+		pass
+	return rend('layout.html')
+
 
 # error <<<<<<<<<<<
 @app.errorhandler(400)

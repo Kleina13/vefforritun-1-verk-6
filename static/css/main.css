@@ -7,9 +7,9 @@ body {
 }
 
 :root {
-    --main-color: #8400ff;
-    --main-text-color: #ffffff;
-    --main-text-color-alt: #eeff00;
+    --main-color: #fffb00;
+    --main-text-color: #000000;
+    --main-text-color-alt: #ffffff;
 }
 
 .center {
