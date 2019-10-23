@@ -4,7 +4,6 @@ from os import urandom
 from flask import Flask, render_template as rend, session, request, url_for
 from requests import get
 
-token = ''
 app = Flask(__name__)
 app.secret_key = urandom(13)
 
@@ -12,6 +11,7 @@ with get('https://apis.is/petrol') as response:
 	if response:
 		print(' * API Succesfully loaded', response)
 		data = response.json()['results']
+		timestamp = response.json()['timestampPriceChanges'][:10]
 	else:
 		print(' * API error', response)
 		exit()
@@ -22,21 +22,21 @@ for station in data:
         stations.append(station['company'])
 
 
-# lat, lon = data[INT]['geo']['lat'], data[INT]['geo']['lon']
-
 @app.route('/')
 def index():
-	return rend('index.html', stations=stations, data=data)
+	return rend('index.html', stations=stations, timestamp=timestamp, data=data)
 
 @app.route('/company/<name>')
 def company(name):
-	return rend('layout.html')
+	return rend('company.html', name=name, data=data)
 
-@app.route('/station/<int:id>')
-def gas_station(id):
-	with get(token) as map:
-		pass
-	return rend('layout.html')
+@app.route('/station/<key>')
+def gas_station(key):
+	for x in data:
+		if x['key'] == key:
+			station = x
+			break
+	return rend('station.html', key=key, data=data, station=station)
 
 
 # error <<<<<<<<<<<

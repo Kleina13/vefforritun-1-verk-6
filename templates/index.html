@@ -1,12 +1,13 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1 class="center">{% block title %}Petrol Stations{% endblock %}</h1>
+    <h1 class="center_text">{% block title %}Bensín stöðvar{% endblock %}</h1>
     <nav>
         {% for station in stations %}
             <div>
-                <a href="/company/{{ station }}" >{{ station }}</a>
+                <a href="/company/{{ station }}">{{ station }}</a>
             </div>
         {% endfor %}
     </nav>
+    <p>upplýsingar seinast uppfærðar <span style="color:var(--main-color);">{{ timestamp }}</span></p>
 {% endblock %}
