@@ -22,9 +22,20 @@ for station in data:
         stations.append(station['company'])
 
 
+
+
 @app.route('/')
 def index():
-	return rend('index.html', stations=stations, timestamp=timestamp, data=data)
+	low_bensin = data[0]
+	low_disel = data[0]
+	for station in data:
+		if station['bensin95'] > low_bensin['bensin95']:
+			low_bensin = station
+		else: pass
+		if station['diesel'] > low_disel['diesel']:
+			low_disel = station
+		else: pass
+	return rend('index.html', stations=stations, timestamp=timestamp, data=data, low_bensin=low_bensin, low_disel=low_disel)
 
 @app.route('/company/<name>')
 def company(name):

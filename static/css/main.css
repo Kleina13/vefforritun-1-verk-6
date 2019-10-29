@@ -37,6 +37,22 @@ a:visited {
     margin-right:auto;
 }
 
+.container {
+    padding: 50px 0;
+    margin: 20px 25%;
+    border: solid 3px var(--main-color);
+    border-radius: 20px;;
+    background-color: var(--main-text-color-alt);
+}
+
+img {
+    transition: .7s;
+}
+
+.container:hover img{
+    transform: scale(1.5);
+}
+
 .border {
     border: var(--main-color) solid 2px;
     border-radius: 20px;
