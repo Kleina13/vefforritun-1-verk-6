@@ -5,9 +5,9 @@
     <nav>
         {% for station in stations %}
             <div>
-                <a href="/company/{{ station }}">{{ station }}</a>
+                <a href="/company/{{ station }}"><img src="{{ url_for('static', filename='img/' + station + '.jpg') }}" style="width:82px" title="{{ station }}" alt="{{ station }}"></a>
             </div>
         {% endfor %}
-    </nav>
-    <p>upplýsingar seinast uppfærðar <span style="color:var(--main-color);">{{ timestamp }}</span></p>
+        </nav>
+    <p>upplýsingar seinast uppfærðar <a href="https://apis.is/petrol" target="_blank"style="color:var(--main-color);">{{ timestamp }}</a></p>
 {% endblock %}

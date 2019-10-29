@@ -65,3 +65,9 @@ a:visited {
     background-color: var(--main-color);
     color: var(--main-text-color);
 }
+
+#lol {color: #696969;}
+
+nav div{
+    border: var(--main-color);
+}
