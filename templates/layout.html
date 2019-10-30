@@ -10,5 +10,10 @@
 </head>
 <body>
     {% block content %}{% endblock %}
+    <footer class="center_text">
+        <p>upplýsingar seinast uppfærðar <a href="https://apis.is/petrol" target="_blank"style="color:var(--main-color);">{{ timestamp }}</a></p>
+        <p>lægsta bensín er hjá <a href="/station/{{ low_bensin['key'] }}">{{ low_bensin['company'], low_bensin['name'], low_bensin['bensin95'] }}</a>.</p>
+        <p>lægsta dísel er hjá <a href="/station/{{ low_disel['key'] }}">{{ low_disel['company'], low_disel['name'], low_disel['diesel'] }}</a>.</p>
+    </footer>
 </body>
 </html>

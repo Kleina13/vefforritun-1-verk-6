@@ -7,13 +7,19 @@ body {
     background-color: #808080;
 }
 
+/* #fffb00 */
+
 :root {
-    --main-color: #fffb00;
+    --main-color: #22ffc8;
     --main-text-color: #000000;
     --main-text-color-alt: #ffffff;
 }
 
 a {
+    color: var(--main-color);
+}
+
+h1 {
     color: var(--main-color);
 }
 
@@ -69,6 +75,10 @@ img {
     border: 1px solid #5d5d5d;
     padding: 8px;
 }
+
+#stations tr {
+    color: var(--main-text-color-alt);
+}
   
 #stations tr:nth-child(even){background-color: #666666;}
   
@@ -86,4 +96,16 @@ img {
 
 nav div{
     border: var(--main-color);
+}
+
+footer {
+    margin-top: 5em;
+    background-color: #696969;
+    padding: 15px 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: var(--main-text-color-alt);
+    text-align: center;
+    border-top: var(--main-color) 2px dotted;
 }
