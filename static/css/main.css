@@ -7,7 +7,8 @@ body {
     background-color: #808080;
 }
 
-/* #fffb00 */
+/* #fffb00
+   #22ffc8 */
 
 :root {
     --main-color: #22ffc8;
@@ -32,15 +33,15 @@ a:visited {
 }
 
 .error {
-    color:var(--main-color);
-    margin-top:15%;
-    font-size:80px;
-    margin-bottom:15px;
+    color: var(--main-color);
+    margin-top: 15%;
+    font-size: 80px;
+    margin-bottom: 15px;
 }
 
 .center {
-    margin-left:auto; 
-    margin-right:auto;
+    margin-left: auto; 
+    margin-right: auto;
 }
 
 .container {
